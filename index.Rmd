@@ -42,6 +42,9 @@ d_times <- time_entries(concise = F) %>%
   left_join(
     d_users, by = "user_id")
 
+```
+
+```{r}
 # show table
 d_times %>% 
   select(
@@ -49,9 +52,7 @@ d_times %>%
     time_start, duration, description) %>% 
   arrange(user_name, project_name, time_start) %>% 
   datatable() %>%
-  formatRound(columns=c('duration'), digits=3)```
-
-
+  formatRound(columns=c('duration'), digits=3)
 
 ```
 
